@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.abeldevelop.architecture</groupId>
+        <artifactId>parent-pom</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.abeldevelop.architecture.service.management</groupId>
+    <artifactId>management</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    
+    <name>management</name>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.abeldevelop.architecture.service.management</groupId>
+				<artifactId>management-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.abeldevelop.architecture.service.management</groupId>
+				<artifactId>management-repository</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.abeldevelop.architecture.service.management</groupId>
+				<artifactId>management-dto</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.abeldevelop.architecture.service.management</groupId>
+				<artifactId>management-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.abeldevelop.architecture.service.management</groupId>
+				<artifactId>management-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.abeldevelop.architecture.service.management</groupId>
+				<artifactId>management-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+  <modules>
+    <module>management-model</module>
+    <module>management-repository</module>
+    <module>management-dto</module>
+    <module>management-api</module>
+    <module>management-service</module>
+  </modules>
+</project>
