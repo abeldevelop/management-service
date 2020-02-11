@@ -2,9 +2,8 @@ package com.abeldevelop.architecture.service.management.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.abeldevelop.architecture.library.common.model.BaseEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -23,12 +22,16 @@ import lombok.experimental.SuperBuilder;
 @ToString
 @Table(name = "services", schema = "management_db")
 @Entity
-public class ServiceEntity extends BaseEntity {
+public class ServiceEntity {
 
-	@Column(name = "name", nullable = false)
+	@Id
+	@Column(name = "id", nullable = false, unique = true)
+	private String id;
+	
+	@Column(name = "name", nullable = false, unique = true)
 	private String name;
 	
-	@Column(name = "port", nullable = false)
+	@Column(name = "port", nullable = false, unique = true)
 	private Integer port;
 	
 	@Column(name = "git_url", nullable = false)

@@ -50,7 +50,7 @@ public interface ApplicationApi {
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ApplicationResponseResource executeUpdate(
-			@ApiParam(name = "id", value = "ID of the application", required = true, example = "1") @PathVariable("id") Long id,
+			@ApiParam(name = "id", value = "ID of the application", required = true, example = "blog") @PathVariable("id") String id,
 			@ApiParam(name = "application", value = "application to updated", required = true) @RequestBody UpdateApplicationRequestResource updateApplicationRequestResource);
 
 	@ApiOperation(value = "Delete application")
@@ -62,7 +62,7 @@ public interface ApplicationApi {
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void executeDelete(
-			@ApiParam(name = "id", value = "ID of the application", required = true, example = "1") @PathVariable("id") Long id);
+			@ApiParam(name = "id", value = "ID of the application", required = true, example = "blog") @PathVariable("id") String id);
 
 	@ApiOperation(value = "Find application by ID")
 	@ApiResponses({
@@ -73,14 +73,15 @@ public interface ApplicationApi {
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ApplicationResponseResource executeFindById(
-			@ApiParam(name = "id", value = "ID of the application", required = true, example = "1") @PathVariable("id") Long id);
+			@ApiParam(name = "id", value = "ID of the application", required = true, example = "blog") @PathVariable("id") String id);
 
 	@ApiOperation(value = "Find all applications")
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "page", value = "Number of page", required = false, example = "1", defaultValue = "1", dataType = "int", paramType = "query"),
 			@ApiImplicitParam(name = "size", value = "Size of page", required = false, example = "1", defaultValue = "10", dataType = "int", paramType = "query"),
-			@ApiImplicitParam(name = "sort", value = "Field and type to sort the fields", required = false, defaultValue = "CODE_DESC", example = "CODE_DESC", dataType = "string", paramType = "query"),
-			@ApiImplicitParam(name = "name", value = "Part of application name to search", required = false, example = "fir", dataType = "string", paramType = "query") })
+			@ApiImplicitParam(name = "sort", value = "Field and type to sort the fields", required = false, defaultValue = "NAME_DESC", example = "NAME_DESC", dataType = "string", paramType = "query"),
+			@ApiImplicitParam(name = "name", value = "Part of application name to search", required = false, example = "fir", dataType = "string", paramType = "query"),
+			@ApiImplicitParam(name = "enabled", value = "Filter by enabled or disabled", required = false, defaultValue = "true", example = "true", dataType = "string", paramType = "query")})
 	@ApiResponses({
 			@ApiResponse(code = 200, response = ApplicationPaginationResponseResource.class, message = SpringFoxConstants.API_RESPONSE_CODE_200_MESSAGE),
 			@ApiResponse(code = 400, response = ErrorResponseResource.class, message = SpringFoxConstants.API_RESPONSE_CODE_400_MESSAGE),

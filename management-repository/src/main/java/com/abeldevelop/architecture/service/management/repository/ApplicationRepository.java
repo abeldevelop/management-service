@@ -12,11 +12,13 @@ public interface ApplicationRepository {
 
 	public ApplicationEntity executeSave(ApplicationEntity applicationEntity);
     
-    public Optional<ApplicationEntity> executeFindById(Long id);
+	public boolean executeExistsById(String id);
+	
+    public Optional<ApplicationEntity> executeFindById(String id);
     
     public Optional<ApplicationEntity> executeFindByName(String name);
     
-    public void executeDeleteById(Long id);
+    public void executeDeleteById(String id);
 
     public Page<ApplicationEntity> executeFindAll(Pageable pageable);
     

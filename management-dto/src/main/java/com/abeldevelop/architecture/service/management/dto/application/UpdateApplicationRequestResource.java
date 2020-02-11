@@ -23,11 +23,6 @@ import lombok.ToString;
 @ToString
 public class UpdateApplicationRequestResource {
 
-	@ApiModelProperty(notes=ApplicationConstants.NAME_FIELD_NOTES, example=ApplicationConstants.NAME_FIELD_EXAMPLE, required = true, position = 1)
-	@NotNull
-	@Size(min = ApplicationConstants.NAME_MIN_SIZE, max = ApplicationConstants.NAME_MAX_SIZE)
-	private String name;
-	
 	@ApiModelProperty(notes=ApplicationConstants.DESCRIPTION_FIELD_NOTES, required = true, position = 2)
 	@NotNull
 	@Size(min = ApplicationConstants.DESCRIPTION_MIN_SIZE, max = ApplicationConstants.DESCRIPTION_MAX_SIZE)

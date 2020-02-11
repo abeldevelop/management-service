@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(ApplicationEntity.class)
 public class ApplicationEntity_ {
 
-	public static volatile SingularAttribute<ApplicationEntity, Long> id;
+	public static volatile SingularAttribute<ApplicationEntity, String> id;
 	public static volatile SingularAttribute<ApplicationEntity, String> name;
 	public static volatile SingularAttribute<ApplicationEntity, String> description;
 	public static volatile SingularAttribute<ApplicationEntity, Boolean> enabled;

@@ -5,12 +5,11 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
-
-import com.abeldevelop.architecture.library.common.model.BaseEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -30,8 +29,12 @@ import lombok.experimental.SuperBuilder;
 @ToString
 @Table(name = "applications", schema = "management_db")
 @Entity
-public class ApplicationEntity extends BaseEntity {
+public class ApplicationEntity {
 
+	@Id
+	@Column(name = "id", nullable = false, unique = true)
+	private String id;
+	
 	@Column(name = "name", nullable = false, unique = true)
 	private String name;
 	

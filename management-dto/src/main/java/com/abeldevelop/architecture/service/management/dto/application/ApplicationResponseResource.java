@@ -24,7 +24,7 @@ public class ApplicationResponseResource {
 
 	@ApiModelProperty(notes=ApplicationConstants.ID_FIELD_NOTES, example=ApplicationConstants.ID_FIELD_EXAMPLE, required = true, position = 0)
     @NotNull
-    private Long id;
+    private String id;
 	
 	@ApiModelProperty(notes=ApplicationConstants.NAME_FIELD_NOTES, example=ApplicationConstants.NAME_FIELD_EXAMPLE, required = true, position = 1)
 	@NotNull
