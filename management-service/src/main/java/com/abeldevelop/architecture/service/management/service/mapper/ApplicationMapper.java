@@ -56,7 +56,6 @@ public class ApplicationMapper {
     }
     
     public ApplicationEntity mapDomainToEntity(Application application, ApplicationEntity applicationEntity) {
-    	applicationEntity.setName(application.getName());
     	applicationEntity.setDescription(application.getDescription());
     	applicationEntity.setEnabled(application.getEnabled());
     	applicationEntity.setHomeUri(application.getHomeUri());

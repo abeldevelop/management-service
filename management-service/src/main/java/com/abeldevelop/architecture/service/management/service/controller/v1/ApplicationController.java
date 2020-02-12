@@ -4,7 +4,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.abeldevelop.architecture.library.common.annotation.DisableDataInLog;
 import com.abeldevelop.architecture.library.common.domain.pagination.in.PaginationAndSortIn;
 import com.abeldevelop.architecture.library.common.domain.pagination.in.PaginationIn;
 import com.abeldevelop.architecture.library.common.domain.pagination.out.PaginationResult;
@@ -67,7 +66,6 @@ public class ApplicationController implements ApplicationApi {
 		return applicationResponseResource;
 	}
 
-//	@DisableDataInLog
 	@Override
 	public ApplicationPaginationResponseResource executeFindAll(Integer page, Integer size, ApplicationSort sort, String name, Boolean enabled) {
 		PaginationIn paginationIn = paginationMapper.map(page, size);

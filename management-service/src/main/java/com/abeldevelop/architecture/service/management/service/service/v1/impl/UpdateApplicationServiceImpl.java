@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.abeldevelop.architecture.library.common.exception.client.BadRequestException;
+import com.abeldevelop.architecture.library.common.service.CommonService;
 import com.abeldevelop.architecture.service.management.model.ApplicationEntity;
 import com.abeldevelop.architecture.service.management.repository.ApplicationRepository;
 import com.abeldevelop.architecture.service.management.service.constant.ErrorApplicationCodeMessageConstants;
@@ -17,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class UpdateApplicationServiceImpl implements UpdateApplicationService {
+public class UpdateApplicationServiceImpl extends CommonService implements UpdateApplicationService {
 
 	private final ApplicationRepository applicationRepository;
 	private final ApplicationMapper applicationMapper;
@@ -27,6 +28,9 @@ public class UpdateApplicationServiceImpl implements UpdateApplicationService {
 	public Application executeUpdate(Application application) {
 		ApplicationEntity applicationEntity = applicationRepository.executeFindById(application.getId())
 			.orElseThrow(() -> new BadRequestException(ErrorApplicationCodeMessageConstants.APPLICATION_WITH_ID_NOT_EXIST, Arrays.asList(application.getId())));
+		
+		checkNotExistConflict(applicationEntity.getVersion(), application.getVersion());
+		
 		return applicationMapper.mapEntityToDomain(applicationRepository.executeSave(applicationMapper.mapDomainToEntity(application, applicationEntity)));
 	}
 
