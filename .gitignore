@@ -1,3 +1,6 @@
+management-service_*-*-*.json
+LOG_FILE_IS_UNDEFINED_*-*-*.json
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
