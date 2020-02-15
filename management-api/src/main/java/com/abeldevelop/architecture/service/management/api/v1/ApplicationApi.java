@@ -39,7 +39,7 @@ public interface ApplicationApi {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public ApplicationResponseResource executeCreate(
-			@ApiParam(name = "errorMessage", value = "application to create", required = true) @RequestBody CreateApplicationRequestResource createApplicationRequestResource);
+			@ApiParam(name = "application", value = "application to create", required = true) @RequestBody CreateApplicationRequestResource createApplicationRequestResource);
 
 	@ApiOperation(value = "Update application")
 	@ApiResponses({
