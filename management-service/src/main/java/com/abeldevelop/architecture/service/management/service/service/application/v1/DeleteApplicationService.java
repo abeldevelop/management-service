@@ -1,4 +1,4 @@
-package com.abeldevelop.architecture.service.management.service.service.v1;
+package com.abeldevelop.architecture.service.management.service.service.application.v1;
 
 public interface DeleteApplicationService {
 

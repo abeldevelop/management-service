@@ -1,4 +1,4 @@
-package com.abeldevelop.architecture.service.management.service.service.v1.impl;
+package com.abeldevelop.architecture.service.management.service.service.application.v1.impl;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ import com.abeldevelop.architecture.service.management.repository.ApplicationRep
 import com.abeldevelop.architecture.service.management.service.constant.ErrorApplicationCodeMessageConstants;
 import com.abeldevelop.architecture.service.management.service.domain.Application;
 import com.abeldevelop.architecture.service.management.service.mapper.ApplicationMapper;
-import com.abeldevelop.architecture.service.management.service.service.v1.UpdateApplicationService;
+import com.abeldevelop.architecture.service.management.service.service.application.v1.UpdateApplicationService;
 
 import lombok.RequiredArgsConstructor;
 

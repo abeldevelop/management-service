@@ -1,4 +1,4 @@
-package com.abeldevelop.architecture.service.management.service.service.v1.impl;
+package com.abeldevelop.architecture.service.management.service.service.application.v1.impl;
 
 import java.util.Arrays;
 
@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.abeldevelop.architecture.library.common.exception.client.BadRequestException;
 import com.abeldevelop.architecture.service.management.repository.ApplicationRepository;
 import com.abeldevelop.architecture.service.management.service.constant.ErrorApplicationCodeMessageConstants;
-import com.abeldevelop.architecture.service.management.service.service.v1.DeleteApplicationService;
+import com.abeldevelop.architecture.service.management.service.service.application.v1.DeleteApplicationService;
 
 import lombok.RequiredArgsConstructor;
 

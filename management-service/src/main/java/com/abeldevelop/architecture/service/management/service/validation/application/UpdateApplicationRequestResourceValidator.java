@@ -1,4 +1,4 @@
-package com.abeldevelop.architecture.service.management.service.validation;
+package com.abeldevelop.architecture.service.management.service.validation.application;
 
 import java.util.Arrays;
 
