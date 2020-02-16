@@ -26,14 +26,14 @@ public class ApplicationPaginationResponseResourceValidator implements Validatio
 	public void validate(Object toValidate) {
 		ApplicationPaginationResponseResource applicationPaginationResponseResource = (ApplicationPaginationResponseResource) toValidate;
 		validatePagination(applicationPaginationResponseResource);
-		validateErrorMessages(applicationPaginationResponseResource);
+		validateApplications(applicationPaginationResponseResource);
 	}
 
 	private void validatePagination(ApplicationPaginationResponseResource applicationPaginationResponseResource) {
 		paginationResponseResourceValidation.validate(applicationPaginationResponseResource.getPagination());
 	}
 	
-	private void validateErrorMessages(ApplicationPaginationResponseResource applicationPaginationResponseResource) {
+	private void validateApplications(ApplicationPaginationResponseResource applicationPaginationResponseResource) {
 		if(applicationPaginationResponseResource.getApplications() == null) {
 			throw new ValidationResponseException(ErrorApplicationCodeMessageConstants.APPLICATION_PAGINATION_RESPONSE_RESOURCE_APPLICATIONS_NOT_NULL);
 		}

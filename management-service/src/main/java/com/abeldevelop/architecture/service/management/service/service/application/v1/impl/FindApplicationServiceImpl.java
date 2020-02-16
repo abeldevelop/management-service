@@ -39,11 +39,15 @@ public class FindApplicationServiceImpl implements FindApplicationService {
 	
 	@Override
 	@Transactional(readOnly = true)
+	public ApplicationEntity findById(String id) {
+		return applicationRepository.executeFindById(id)
+				.orElseThrow(() -> new BadRequestException(ErrorApplicationCodeMessageConstants.APPLICATION_WITH_ID_NOT_EXIST, Arrays.asList(id)));
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
 	public Application executeFindById(String id) {
-		return applicationMapper.mapEntityToDomain(
-				applicationRepository.executeFindById(id)
-				.orElseThrow(() -> new BadRequestException(ErrorApplicationCodeMessageConstants.APPLICATION_WITH_ID_NOT_EXIST, Arrays.asList(id)))
-				);
+		return applicationMapper.mapEntityToDomain(findById(id));
 	}
 
 	@Override

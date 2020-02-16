@@ -1,7 +1,9 @@
 package com.abeldevelop.architecture.service.management.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -54,9 +56,14 @@ public class ApplicationEntity {
 	@Column(name = "version", nullable = false)
 	private Integer version;
 	
-	@OneToMany(orphanRemoval = true, fetch = FetchType.EAGER)
-	@JoinColumn(name = "application_id")
+	@OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true)
 	@Singular
 	private List<ServiceEntity> services;
 	
+	public void addService(ServiceEntity serviceEntity) {
+		if(services == null) {
+			services = new ArrayList<>();
+		}
+		services.add(serviceEntity);
+	}
 }

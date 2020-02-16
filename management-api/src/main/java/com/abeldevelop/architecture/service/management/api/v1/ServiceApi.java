@@ -77,7 +77,7 @@ public interface ServiceApi {
 			@ApiResponse(code = 500, response = ErrorResponseResource.class, message = SpringFoxConstants.API_RESPONSE_CODE_500_MESSAGE) })
 	@GetMapping("/{name}")
 	@ResponseStatus(HttpStatus.OK)
-	public ServiceResponseResource executeFindById(
+	public ServiceResponseResource executeFindByName(
 			@ApiParam(name = "id", value = "ID of the application", required = true, example = ApplicationConstants.ID_FIELD_EXAMPLE) @PathVariable("id") String id,
 			@ApiParam(name = "name", value = "Name of the service", required = true, example = ServiceConstants.NAME_FIELD_EXAMPLE) @PathVariable("name") String name);
 

@@ -12,8 +12,8 @@ public class ServiceConstants {
     public static final int DESCRIPTION_MIN_SIZE = 5;
     public static final int DESCRIPTION_MAX_SIZE = 255;
     
-    public static final int GIT_URI_MIN_SIZE = 5;
-    public static final int GIT_URI_MAX_SIZE = 255;
+    public static final int GIT_URL_MIN_SIZE = 5;
+    public static final int GIT_URL_MAX_SIZE = 255;
     
     public static final int DOCUMENTATION_URL_MIN_SIZE = 5;
     public static final int DOCUMENTATION_URL_MAX_SIZE = 255;
