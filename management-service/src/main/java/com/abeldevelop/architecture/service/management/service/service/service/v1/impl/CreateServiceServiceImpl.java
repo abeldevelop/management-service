@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.abeldevelop.architecture.library.common.exception.client.BadRequestException;
+import com.abeldevelop.architecture.library.common.service.CommonService;
 import com.abeldevelop.architecture.service.management.model.ApplicationEntity;
 import com.abeldevelop.architecture.service.management.model.ServiceEntity;
-import com.abeldevelop.architecture.service.management.repository.ApplicationRepository;
 import com.abeldevelop.architecture.service.management.repository.ServiceRepository;
 import com.abeldevelop.architecture.service.management.service.constant.ErrorServiceCodeMessageConstants;
 import com.abeldevelop.architecture.service.management.service.mapper.ServiceMapper;
@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class CreateServiceServiceImpl implements CreateServiceService {
+public class CreateServiceServiceImpl extends CommonService implements CreateServiceService {
 	
 	private final FindApplicationService findApplicationService;
 	private final ServiceMapper serviceMapper;

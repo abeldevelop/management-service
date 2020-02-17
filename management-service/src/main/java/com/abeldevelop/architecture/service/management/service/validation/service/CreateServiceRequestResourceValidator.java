@@ -67,4 +67,5 @@ public class CreateServiceRequestResourceValidator implements ValidationResource
 			throw new ValidationRequestException(ErrorServiceCodeMessageConstants.SERVICE_DOCUMENTATION_URL_SIZE, Arrays.asList(ServiceConstants.DOCUMENTATION_URL_MIN_SIZE, ServiceConstants.DOCUMENTATION_URL_MAX_SIZE));
 		}
 	}
+	
 }

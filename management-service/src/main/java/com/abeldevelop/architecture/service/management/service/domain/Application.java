@@ -24,6 +24,5 @@ public class Application {
 	private Boolean enabled;
 	private String homeUri;
 	private String documentationUrl;
-	private Integer version;
 	
 }

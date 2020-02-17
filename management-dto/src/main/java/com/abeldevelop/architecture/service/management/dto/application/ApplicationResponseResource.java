@@ -46,8 +46,4 @@ public class ApplicationResponseResource {
 	@NotNull
 	private String documentationUrl;
 	
-	@ApiModelProperty(notes=ApplicationConstants.VERSION_FIELD_NOTES, example=ApplicationConstants.VERSION_FIELD_EXAMPLE, required = true, position = 6)
-	@NotNull
-	private Integer version;
-	
 }

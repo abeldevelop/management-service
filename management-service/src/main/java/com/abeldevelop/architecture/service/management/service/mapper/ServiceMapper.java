@@ -52,7 +52,6 @@ public class ServiceMapper {
 	
 	public ServiceEntity mapDomainToEntity(Service service, ServiceEntity serviceEntity) {
 		serviceEntity.setDescription(service.getDescription());
-		serviceEntity.setPort(service.getPort());
 		serviceEntity.setGitUrl(service.getGitUrl());
 		serviceEntity.setDocumentationUrl(service.getDocumentationUrl());
 		return serviceEntity;

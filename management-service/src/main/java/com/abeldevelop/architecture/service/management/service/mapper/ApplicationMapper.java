@@ -28,7 +28,6 @@ public class ApplicationMapper {
         		.enabled(updateApplicationRequestResource.getEnabled())
         		.homeUri(updateApplicationRequestResource.getHomeUri())
         		.documentationUrl(updateApplicationRequestResource.getDocumentationUrl())
-        		.version(updateApplicationRequestResource.getVersion())
                 .build();
     }
     
@@ -40,7 +39,6 @@ public class ApplicationMapper {
         		.enabled(application.getEnabled())
         		.homeUri(application.getHomeUri())
         		.documentationUrl(application.getDocumentationUrl())
-        		.version(application.getVersion())
                 .build();
     }
     
@@ -51,7 +49,6 @@ public class ApplicationMapper {
         		.enabled(application.getEnabled())
         		.homeUri(application.getHomeUri())
         		.documentationUrl(application.getDocumentationUrl())
-        		.version(application.getVersion())
                 .build();
     }
     
@@ -60,7 +57,6 @@ public class ApplicationMapper {
     	applicationEntity.setEnabled(application.getEnabled());
     	applicationEntity.setHomeUri(application.getHomeUri());
     	applicationEntity.setDocumentationUrl(application.getDocumentationUrl());
-    	applicationEntity.setVersion(application.getVersion());
     	return applicationEntity;
     }
     
@@ -72,7 +68,6 @@ public class ApplicationMapper {
         		.enabled(applicationEntity.getEnabled())
         		.homeUri(applicationEntity.getHomeUri())
         		.documentationUrl(applicationEntity.getDocumentationUrl())
-        		.version(applicationEntity.getVersion())
                 .build();
     }
 }

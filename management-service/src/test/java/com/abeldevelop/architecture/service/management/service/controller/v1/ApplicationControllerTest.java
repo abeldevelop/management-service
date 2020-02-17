@@ -36,7 +36,6 @@ public class ApplicationControllerTest extends CommonTestController {
 	private static final String DESCRIPTION_OK_VALUE = "Blog Application";
 	private static final String HOME_URI_OK_VALUE = "http://blog.com";
 	private static final String DOCUMENTATION_URL_OK_VALUE = "http://blog.com";
-	private static final Integer VERSION_OK_VALUE = 0;
 	
 	private static final String VALUE_WITH_MORE_THAN_50_CHARACTERS = "012345678901234567890123456789012345678901234567890";
 	private static final String VALUE_WITH_MORE_THAN_255_CHARACTERS = "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345";
@@ -282,7 +281,6 @@ public class ApplicationControllerTest extends CommonTestController {
 		assertEquals(true, response.getEnabled().booleanValue());
 		assertEquals(HOME_URI_OK_VALUE, response.getHomeUri());
 		assertEquals(DOCUMENTATION_URL_OK_VALUE, response.getDocumentationUrl());
-		assertEquals(0, response.getVersion());
 	}
 	
 	private CreateApplicationRequestResource createApplicationRequestResource(String name, String description, Boolean enabled, String homeUri, String documentationUrl) {
@@ -306,7 +304,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(null, true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(null, true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -323,7 +321,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource("a", true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource("a", true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -340,7 +338,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(VALUE_WITH_MORE_THAN_255_CHARACTERS, true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(VALUE_WITH_MORE_THAN_255_CHARACTERS, true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -357,7 +355,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, null, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, null, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -374,7 +372,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, null, DOCUMENTATION_URL_OK_VALUE, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, null, DOCUMENTATION_URL_OK_VALUE))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -391,7 +389,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, "a", DOCUMENTATION_URL_OK_VALUE, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, "a", DOCUMENTATION_URL_OK_VALUE))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -408,7 +406,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, VALUE_WITH_MORE_THAN_255_CHARACTERS, DOCUMENTATION_URL_OK_VALUE, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, VALUE_WITH_MORE_THAN_255_CHARACTERS, DOCUMENTATION_URL_OK_VALUE))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -425,7 +423,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, null, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, null))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -442,7 +440,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, "a", VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, "a"))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -459,7 +457,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, VALUE_WITH_MORE_THAN_255_CHARACTERS, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, VALUE_WITH_MORE_THAN_255_CHARACTERS))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -470,23 +468,6 @@ public class ApplicationControllerTest extends CommonTestController {
 	}
 	
 	@Test
-	public void updateApplication_ko_versionNotNull() throws Exception {
-		String id = "blog";
-		
-		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
-				.method(HttpMethod.PUT)
-				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE, null))
-				.expectedStatus(HttpStatus.BAD_REQUEST)
-				.typeReturn(ErrorResponseResource.class)
-				.build();
-		
-		ErrorResponseResource response = makeRestRequest(endpointData);
-		
-		assertEquals("La version es obligatoria", response.getMessage());
-	}
-	
-	@Test
 	public void updateApplication_ko_applicationWithIdNotExist() throws Exception {
 		applicationSpringDataRepository.deleteAll();
 		String id = "blog";
@@ -494,7 +475,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE, VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE))
 				.expectedStatus(HttpStatus.BAD_REQUEST)
 				.typeReturn(ErrorResponseResource.class)
 				.build();
@@ -502,25 +483,6 @@ public class ApplicationControllerTest extends CommonTestController {
 		ErrorResponseResource response = makeRestRequest(endpointData);
 		
 		assertEquals("No existe una aplicacion con el id blog", response.getMessage());
-	}
-	
-	@Test
-	public void updateApplication_ko_applicationVersionConflict() throws Exception {
-		applicationSpringDataRepository.deleteAll();
-		saveApplicationEntity(ID_OK_VALUE, NAME_OK_VALUE, DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE);
-		String id = "blog";
-		
-		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
-				.method(HttpMethod.PUT)
-				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE, true, HOME_URI_OK_VALUE, DOCUMENTATION_URL_OK_VALUE, 1))
-				.expectedStatus(HttpStatus.CONFLICT)
-				.typeReturn(ErrorResponseResource.class)
-				.build();
-		
-		ErrorResponseResource response = makeRestRequest(endpointData);
-		
-		assertEquals("Hay conflicto al guardar, refresque la pantalla y vuelva a intentarlo", response.getMessage());
 	}
 	
 	@Test
@@ -532,7 +494,7 @@ public class ApplicationControllerTest extends CommonTestController {
 		EndpointData<ApplicationResponseResource> endpointData = EndpointData.<ApplicationResponseResource>builder()
 				.method(HttpMethod.PUT)
 				.endpoint(BASE_V1_ENDPOINT + "/" + id)
-				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE+"2", true, HOME_URI_OK_VALUE+"2", DOCUMENTATION_URL_OK_VALUE+"2", VERSION_OK_VALUE))
+				.content(updateApplicationRequestResource(DESCRIPTION_OK_VALUE+"2", true, HOME_URI_OK_VALUE+"2", DOCUMENTATION_URL_OK_VALUE+"2"))
 				.expectedStatus(HttpStatus.OK)
 				.typeReturn(ApplicationResponseResource.class)
 				.build();
@@ -545,16 +507,14 @@ public class ApplicationControllerTest extends CommonTestController {
 		assertEquals(true, response.getEnabled().booleanValue());
 		assertEquals(HOME_URI_OK_VALUE+"2", response.getHomeUri());
 		assertEquals(DOCUMENTATION_URL_OK_VALUE+"2", response.getDocumentationUrl());
-		assertEquals(0, response.getVersion());
 	}
 	
-	private UpdateApplicationRequestResource updateApplicationRequestResource(String description, Boolean enabled, String homeUri, String documentationUrl, Integer version) {
+	private UpdateApplicationRequestResource updateApplicationRequestResource(String description, Boolean enabled, String homeUri, String documentationUrl) {
 		return UpdateApplicationRequestResource.builder()
 				.description(description)
 				.enabled(enabled)
 				.homeUri(homeUri)
 				.documentationUrl(documentationUrl)
-				.version(version)
 				.build();
 	}
 	
@@ -640,7 +600,6 @@ public class ApplicationControllerTest extends CommonTestController {
 		assertEquals(true, response.getEnabled().booleanValue());
 		assertEquals(HOME_URI_OK_VALUE, response.getHomeUri());
 		assertEquals(DOCUMENTATION_URL_OK_VALUE, response.getDocumentationUrl());
-		assertEquals(0, response.getVersion());
 	}
 	
 	//////////////////////////////

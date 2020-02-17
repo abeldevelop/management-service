@@ -2,6 +2,10 @@ package com.abeldevelop.architecture.service.management.service.controller.v1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +18,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import com.abeldevelop.architecture.library.common.dto.exception.ErrorResponseResource;
 import com.abeldevelop.architecture.service.management.dto.service.CreateServiceRequestResource;
+import com.abeldevelop.architecture.service.management.dto.service.ServicePaginationResponseResource;
 import com.abeldevelop.architecture.service.management.dto.service.ServiceResponseResource;
 import com.abeldevelop.architecture.service.management.dto.service.UpdateServiceRequestResource;
 import com.abeldevelop.architecture.service.management.model.ApplicationEntity;
@@ -468,6 +473,44 @@ public class ServiceControllerTest extends CommonTestController {
 		assertEquals("La URL de la documentacion debe tener entre 5 y 255 caracteres", response.getMessage());
 	}
 	
+	@Test
+	public void updateService_ko_serviceWithNameNotExist() throws Exception {
+		serviceSpringDataRepository.deleteAll();
+		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
+				.method(HttpMethod.PUT)
+				.endpoint(BASE_ENDPOINT + "/" + NAME_OK_VALUE)
+				.content(updateServiceRequestResource(DESCRIPTION_OK_VALUE, GIT_URL_OK_VALUE, DOCUMENTATION_URL_OK_VALUE))
+				.expectedStatus(HttpStatus.BAD_REQUEST)
+				.typeReturn(ErrorResponseResource.class)
+				.build();
+		
+		ErrorResponseResource response = makeRestRequest(endpointData);
+		
+		assertEquals("No existe un servicio con el nombre blog-service", response.getMessage());
+	}
+	
+	@Test
+	public void updateService_ok() throws Exception {
+		serviceSpringDataRepository.deleteAll();
+		applicationSpringDataRepository.findById(APPLICATION_ID).get();
+		serviceSpringDataRepository.save(ServiceEntity.builder().name(NAME_OK_VALUE).description(DESCRIPTION_OK_VALUE).port(PORT_OK_VALUE).gitUrl(GIT_URL_OK_VALUE).documentationUrl(DOCUMENTATION_URL_OK_VALUE).application(applicationSpringDataRepository.findById(APPLICATION_ID).get()).build());
+		EndpointData<ServiceResponseResource> endpointData = EndpointData.<ServiceResponseResource>builder()
+				.method(HttpMethod.PUT)
+				.endpoint(BASE_ENDPOINT + "/" + NAME_OK_VALUE)
+				.content(updateServiceRequestResource(DESCRIPTION_OK_VALUE, GIT_URL_OK_VALUE, DOCUMENTATION_URL_OK_VALUE))
+				.expectedStatus(HttpStatus.OK)
+				.typeReturn(ServiceResponseResource.class)
+				.build();
+		
+		ServiceResponseResource response = makeRestRequest(endpointData);
+		
+		assertEquals(NAME_OK_VALUE, response.getName());
+		assertEquals(DESCRIPTION_OK_VALUE, response.getDescription());
+		assertEquals(PORT_OK_VALUE, response.getPort());
+		assertEquals(GIT_URL_OK_VALUE, response.getGitUrl());
+		assertEquals(DOCUMENTATION_URL_OK_VALUE, response.getDocumentationUrl());
+	}
+	
 	private UpdateServiceRequestResource updateServiceRequestResource(String description, String gitUrl, String documentationUrl) {
 		return UpdateServiceRequestResource.builder()
 				.description(description)
@@ -480,12 +523,108 @@ public class ServiceControllerTest extends CommonTestController {
 	//		executeDelete		//
 	//////////////////////////////
 	
+	@Test
+	public void deleteService_ko_serviceWithNameNotExist() throws Exception {
+		serviceSpringDataRepository.deleteAll();
+		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
+				.method(HttpMethod.DELETE)
+				.endpoint(BASE_ENDPOINT + "/" + NAME_OK_VALUE)
+				.expectedStatus(HttpStatus.BAD_REQUEST)
+				.typeReturn(ErrorResponseResource.class)
+				.build();
+		
+		ErrorResponseResource response = makeRestRequest(endpointData);
+		
+		assertEquals("No existe un servicio con el nombre blog-service", response.getMessage());
+	}
+	
+	@Test
+	public void deleteService_ok() throws Exception {
+		serviceSpringDataRepository.deleteAll();
+		serviceSpringDataRepository.save(ServiceEntity.builder().name(NAME_OK_VALUE).description(DESCRIPTION_OK_VALUE).port(PORT_OK_VALUE).gitUrl(GIT_URL_OK_VALUE).documentationUrl(DOCUMENTATION_URL_OK_VALUE).application(applicationSpringDataRepository.findById(APPLICATION_ID).get()).build());
+		EndpointData<Void> endpointData = EndpointData.<Void>builder()
+				.method(HttpMethod.DELETE)
+				.endpoint(BASE_ENDPOINT + "/" + NAME_OK_VALUE)
+				.expectedStatus(HttpStatus.NO_CONTENT)
+				.typeReturn(Void.class)
+				.build();
+		
+		makeRestRequest(endpointData);
+		
+		Optional<ServiceEntity> result = serviceSpringDataRepository.findByName(NAME_OK_VALUE);
+		
+		assertEquals(false, result.isPresent());
+	}
+	
 	//////////////////////////////
-	//		executeFind		//
+	//		executeFind			//
 	//////////////////////////////
 	
+	@Test
+	public void findServiceByName_ko_serviceWithNameNotExist() throws Exception {
+		serviceSpringDataRepository.deleteAll();
+		EndpointData<ErrorResponseResource> endpointData = EndpointData.<ErrorResponseResource>builder()
+				.method(HttpMethod.GET)
+				.endpoint(BASE_ENDPOINT + "/" + NAME_OK_VALUE)
+				.expectedStatus(HttpStatus.BAD_REQUEST)
+				.typeReturn(ErrorResponseResource.class)
+				.build();
+		
+		ErrorResponseResource response = makeRestRequest(endpointData);
+		
+		assertEquals("No existe un servicio con el nombre blog-service", response.getMessage());
+	}
+	
+	@Test
+	public void findServiceByName_ok() throws Exception {
+		serviceSpringDataRepository.deleteAll();
+		serviceSpringDataRepository.save(ServiceEntity.builder().name(NAME_OK_VALUE).description(DESCRIPTION_OK_VALUE).port(PORT_OK_VALUE).gitUrl(GIT_URL_OK_VALUE).documentationUrl(DOCUMENTATION_URL_OK_VALUE).application(applicationSpringDataRepository.findById(APPLICATION_ID).get()).build());
+		EndpointData<ServiceResponseResource> endpointData = EndpointData.<ServiceResponseResource>builder()
+				.method(HttpMethod.GET)
+				.endpoint(BASE_ENDPOINT + "/" + NAME_OK_VALUE)
+				.expectedStatus(HttpStatus.OK)
+				.typeReturn(ServiceResponseResource.class)
+				.build();
+		
+		ServiceResponseResource response = makeRestRequest(endpointData);
+		
+		assertEquals(NAME_OK_VALUE, response.getName());
+		assertEquals(DESCRIPTION_OK_VALUE, response.getDescription());
+		assertEquals(PORT_OK_VALUE, response.getPort());
+		assertEquals(GIT_URL_OK_VALUE, response.getGitUrl());
+		assertEquals(DOCUMENTATION_URL_OK_VALUE, response.getDocumentationUrl());
+	}
 	
 	//////////////////////////////
 	//		executeFindAll		//
 	//////////////////////////////
+	
+	@Test
+	public void findAllServices_ok_noParams() throws Exception {
+		EndpointData<ServicePaginationResponseResource> endpointData = EndpointData.<ServicePaginationResponseResource>builder()
+				.method(HttpMethod.GET)
+				.endpoint(BASE_ENDPOINT)
+				.expectedStatus(HttpStatus.OK)
+				.typeReturn(ServicePaginationResponseResource.class)
+				.build();
+		
+		makeRestRequest(endpointData);
+		
+	}
+	
+	@Test
+	public void findAllServices_ok_allParams() throws Exception {
+		Map<String, String> params = new HashMap<>();
+		params.put("name", "o");
+		
+		EndpointData<ServicePaginationResponseResource> endpointData = EndpointData.<ServicePaginationResponseResource>builder()
+				.method(HttpMethod.GET)
+				.endpoint(BASE_ENDPOINT)
+				.params(params)
+				.expectedStatus(HttpStatus.OK)
+				.typeReturn(ServicePaginationResponseResource.class)
+				.build();
+		
+		makeRestRequest(endpointData);
+	}
 }

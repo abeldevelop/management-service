@@ -42,6 +42,7 @@ public class ServiceEntity {
 	@Column(name = "documentation_url", nullable = false)
 	private String documentationUrl;
 	
-	 @ManyToOne(fetch = FetchType.LAZY)
-	 private ApplicationEntity application;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private ApplicationEntity application;
+	
 }

@@ -970,6 +970,1015 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Services",
+					"item": [
+						{
+							"name": "Create new service",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "e695e530-933d-493c-8b13-68aabf45b915",
+										"exec": [
+											"pm.environment.set(\"application-id\", \"blog\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "es"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": null,\n    \"description\": null,\n    \"port\": null,\n    \"gitUrl\": null,\n    \"documentationUrl\": null\n}"
+								},
+								"url": {
+									"raw": "{{management-service-url}}/v1/application/{{application-id}}/service",
+									"host": [
+										"{{management-service-url}}"
+									],
+									"path": [
+										"v1",
+										"application",
+										"{{application-id}}",
+										"service"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Error in Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"<string>\",\n    \"documentationUrl\": \"http://local.com/doc/architecture/\",\n    \"enabled\": true,\n    \"homeUri\": \"http://local.com/architecture\",\n    \"name\": \"Blog\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/application",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"<string>\",\n    \"documentationUrl\": \"http://local.com/doc/architecture/\",\n    \"enabled\": true,\n    \"homeUri\": \"http://local.com/architecture\",\n    \"name\": \"Blog\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/application",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Resource created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"<string>\",\n    \"documentationUrl\": \"http://local.com/doc/architecture/\",\n    \"enabled\": true,\n    \"homeUri\": \"http://local.com/architecture\",\n    \"name\": \"Blog\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/application",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"description\": \"<string>\",\n \"documentationUrl\": \"http://local.com/doc/architecture/\",\n \"enabled\": true,\n \"homeUri\": \"Home URI for the application\",\n \"id\": \"blog\",\n \"name\": \"Blog\",\n \"version\": 1\n}"
+								}
+							]
+						},
+						{
+							"name": "Update service",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8a5c6cf0-ccf4-4c05-bac9-ae9be80f648f",
+										"exec": [
+											"pm.environment.set(\"application-id\", \"blog\");",
+											"pm.environment.set(\"service-id\", \"blog-service\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "es"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": null,\n    \"gitUrl\": null,\n    \"documentationUrl\": null\n}"
+								},
+								"url": {
+									"raw": "{{management-service-url}}/v1/application/{{application-id}}/service/{{service-id}}",
+									"host": [
+										"{{management-service-url}}"
+									],
+									"path": [
+										"v1",
+										"application",
+										"{{application-id}}",
+										"service",
+										"{{service-id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Resource Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"<string>\",\n    \"documentationUrl\": \"http://local.com/doc/architecture/\",\n    \"enabled\": true,\n    \"homeUri\": \"http://local.com/architecture\",\n    \"version\": 1\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"<string>\",\n    \"documentationUrl\": \"http://local.com/doc/architecture/\",\n    \"enabled\": true,\n    \"homeUri\": \"http://local.com/architecture\",\n    \"version\": 1\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Error in Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"<string>\",\n    \"documentationUrl\": \"http://local.com/doc/architecture/\",\n    \"enabled\": true,\n    \"homeUri\": \"http://local.com/architecture\",\n    \"version\": 1\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"<string>\",\n    \"documentationUrl\": \"http://local.com/doc/architecture/\",\n    \"enabled\": true,\n    \"homeUri\": \"http://local.com/architecture\",\n    \"version\": 1\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"description\": \"<string>\",\n \"documentationUrl\": \"http://local.com/doc/architecture/\",\n \"enabled\": true,\n \"homeUri\": \"Home URI for the application\",\n \"id\": \"blog\",\n \"name\": \"Blog\",\n \"version\": 1\n}"
+								}
+							]
+						},
+						{
+							"name": "Find service by Name",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0feb2e7a-8ee9-4a4e-91fb-e9e33bcd444a",
+										"exec": [
+											"pm.environment.set(\"application-id\", \"blog\");",
+											"pm.environment.set(\"service-id\", \"blog-service\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "es"
+									}
+								],
+								"url": {
+									"raw": "{{management-service-url}}/v1/application/{{application-id}}/service/{{service-id}}",
+									"host": [
+										"{{management-service-url}}"
+									],
+									"path": [
+										"v1",
+										"application",
+										"{{application-id}}",
+										"service",
+										"{{service-id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful operation without content",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"description\": \"<string>\",\n \"documentationUrl\": \"http://local.com/doc/architecture/\",\n \"enabled\": true,\n \"homeUri\": \"Home URI for the application\",\n \"id\": \"blog\",\n \"name\": \"Blog\",\n \"version\": 1\n}"
+								},
+								{
+									"name": "Resource Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Error in Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete service",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "a491e623-5050-468a-b219-74148e5bb79c",
+										"exec": [
+											"pm.environment.set(\"application-id\", \"blog\");",
+											"pm.environment.set(\"service-id\", \"blog-service\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "es"
+									}
+								],
+								"url": {
+									"raw": "{{management-service-url}}/v1/application/{{application-id}}/service/{{service-id}}",
+									"host": [
+										"{{management-service-url}}"
+									],
+									"path": [
+										"v1",
+										"application",
+										"{{application-id}}",
+										"service",
+										"{{service-id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Resource Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Successful operation without content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Error in Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								}
+							]
+						},
+						{
+							"name": "Find all services",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "92ff9c99-6e9a-4c27-a55b-676908c9e4b1",
+										"exec": [
+											"pm.environment.set(\"application-id\", \"blog\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "es"
+									}
+								],
+								"url": {
+									"raw": "{{management-service-url}}/v1/application/{{application-id}}/service?",
+									"host": [
+										"{{management-service-url}}"
+									],
+									"path": [
+										"v1",
+										"application",
+										"{{application-id}}",
+										"service"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "Number of page",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"description": "Size of page",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "NAME_DESC",
+											"description": "Field and type to sort the fields",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "",
+											"description": "Part of service name to search",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application?enabled=<boolean>&name=<string>&page=1&size=10&sort=CODE_DESC",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application"
+											],
+											"query": [
+												{
+													"key": "enabled",
+													"value": "<boolean>"
+												},
+												{
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "size",
+													"value": "10"
+												},
+												{
+													"key": "sort",
+													"value": "CODE_DESC"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application?enabled=<boolean>&name=<string>&page=1&size=10&sort=CODE_DESC",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application"
+											],
+											"query": [
+												{
+													"key": "enabled",
+													"value": "<boolean>"
+												},
+												{
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "size",
+													"value": "10"
+												},
+												{
+													"key": "sort",
+													"value": "CODE_DESC"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"applications\": [\n  {\n   \"description\": \"<string>\",\n   \"documentationUrl\": \"http://local.com/doc/architecture/\",\n   \"enabled\": true,\n   \"homeUri\": \"Home URI for the application\",\n   \"id\": \"blog\",\n   \"name\": \"Blog\",\n   \"version\": 1\n  },\n  {\n   \"description\": \"<string>\",\n   \"documentationUrl\": \"http://local.com/doc/architecture/\",\n   \"enabled\": true,\n   \"homeUri\": \"Home URI for the application\",\n   \"id\": \"blog\",\n   \"name\": \"Blog\",\n   \"version\": 1\n  }\n ],\n \"pagination\": {\n  \"isFirst\": true,\n  \"isLast\": false,\n  \"numberOfElements\": 20,\n  \"page\": 1,\n  \"size\": 10,\n  \"totalElements\": 100,\n  \"totalPages\": 5\n }\n}"
+								},
+								{
+									"name": "Resource Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application?enabled=<boolean>&name=<string>&page=1&size=10&sort=CODE_DESC",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application"
+											],
+											"query": [
+												{
+													"key": "enabled",
+													"value": "<boolean>"
+												},
+												{
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "size",
+													"value": "10"
+												},
+												{
+													"key": "sort",
+													"value": "CODE_DESC"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								},
+								{
+									"name": "Error in Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/application?enabled=<boolean>&name=<string>&page=1&size=10&sort=CODE_DESC",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"application"
+											],
+											"query": [
+												{
+													"key": "enabled",
+													"value": "<boolean>"
+												},
+												{
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "size",
+													"value": "10"
+												},
+												{
+													"key": "sort",
+													"value": "CODE_DESC"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": \"92e9013d25cca084\",\n \"error\": \"Internal Server Error\",\n \"message\": \"User not found\",\n \"status\": 500,\n \"timestamp\": \"2019-02-09T20:35:37.384\",\n \"detail\": \"java.lang.NullPointerException\",\n \"stackTrace\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"cause\": {\n  \"code\": \"92e9013d25cca084\",\n  \"error\": \"Internal Server Error\",\n  \"message\": \"User not found\",\n  \"status\": 500,\n  \"timestamp\": \"2019-02-09T20:35:37.384\",\n  \"detail\": \"java.lang.NullPointerException\",\n  \"stackTrace\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"cause\": {\n   \"code\": \"92e9013d25cca084\",\n   \"error\": \"Internal Server Error\",\n   \"message\": \"User not found\",\n   \"status\": 500,\n   \"timestamp\": \"2019-02-09T20:35:37.384\",\n   \"detail\": \"java.lang.NullPointerException\",\n   \"stackTrace\": [\n    \"<string>\",\n    \"<string>\"\n   ],\n   \"cause\": {\n    \"code\": \"92e9013d25cca084\",\n    \"error\": \"Internal Server Error\",\n    \"message\": \"User not found\",\n    \"status\": 500,\n    \"timestamp\": \"2019-02-09T20:35:37.384\",\n    \"detail\": \"java.lang.NullPointerException\",\n    \"stackTrace\": [\n     \"<string>\",\n     \"<string>\"\n    ],\n    \"cause\": {\n     \"code\": \"92e9013d25cca084\",\n     \"error\": \"Internal Server Error\",\n     \"message\": \"User not found\",\n     \"status\": 500,\n     \"timestamp\": \"2019-02-09T20:35:37.384\",\n     \"detail\": \"java.lang.NullPointerException\",\n     \"stackTrace\": [\n      \"<string>\",\n      \"<string>\"\n     ],\n     \"cause\": {\n      \"code\": \"92e9013d25cca084\",\n      \"error\": \"Internal Server Error\",\n      \"message\": \"User not found\",\n      \"status\": 500,\n      \"timestamp\": \"2019-02-09T20:35:37.384\",\n      \"detail\": \"java.lang.NullPointerException\",\n      \"stackTrace\": [\n       \"<string>\",\n       \"<string>\"\n      ],\n      \"cause\": {\n       \"code\": \"92e9013d25cca084\",\n       \"error\": \"Internal Server Error\",\n       \"message\": \"User not found\",\n       \"status\": 500,\n       \"timestamp\": \"2019-02-09T20:35:37.384\",\n       \"detail\": \"java.lang.NullPointerException\",\n       \"stackTrace\": [\n        \"<string>\",\n        \"<string>\"\n       ],\n       \"cause\": {\n        \"code\": \"92e9013d25cca084\",\n        \"error\": \"Internal Server Error\",\n        \"message\": \"User not found\",\n        \"status\": 500,\n        \"timestamp\": \"2019-02-09T20:35:37.384\",\n        \"detail\": \"java.lang.NullPointerException\",\n        \"stackTrace\": [\n         \"<string>\",\n         \"<string>\"\n        ],\n        \"cause\": {\n         \"code\": \"92e9013d25cca084\",\n         \"error\": \"Internal Server Error\",\n         \"message\": \"User not found\",\n         \"status\": 500,\n         \"timestamp\": \"2019-02-09T20:35:37.384\",\n         \"detail\": \"java.lang.NullPointerException\",\n         \"stackTrace\": [\n          \"<string>\",\n          \"<string>\"\n         ],\n         \"cause\": {\n          \"code\": \"92e9013d25cca084\",\n          \"error\": \"Internal Server Error\",\n          \"message\": \"User not found\",\n          \"status\": 500,\n          \"timestamp\": \"2019-02-09T20:35:37.384\",\n          \"detail\": \"java.lang.NullPointerException\",\n          \"stackTrace\": [\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           },\n           {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n           }\n          ],\n          \"cause\": {\n           \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n         }\n        }\n       }\n      }\n     }\n    }\n   }\n  }\n }\n}"
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fb5209f0-0747-4ae7-be62-ea6c821e5843",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "23906b29-666e-464c-b15b-71a53abbbf9d",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"event": [

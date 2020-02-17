@@ -31,12 +31,11 @@ public class ApplicationResponseResourceValidator implements ValidationResource 
 		validateEnabled(applicationResponseResource);
 		validateHomeUri(applicationResponseResource);
 		validateDocumentationUrl(applicationResponseResource);
-		validateVersion(applicationResponseResource);
 	}
 
 	private void validateId(ApplicationResponseResource applicationResponseResource) {
-		if(applicationResponseResource.getVersion() == null) {
-			throw new ValidationResponseException(ErrorApplicationCodeMessageConstants.APPLICATION_VERSION_NOT_NULL);
+		if(applicationResponseResource.getId() == null) {
+			throw new ValidationResponseException(ErrorApplicationCodeMessageConstants.APPLICATION_ID_NOT_NULL);
 		}
 	}
 	
@@ -82,9 +81,4 @@ public class ApplicationResponseResourceValidator implements ValidationResource 
 		}
 	}
 	
-	private void validateVersion(ApplicationResponseResource applicationResponseResource) {
-		if(applicationResponseResource.getVersion() == null) {
-			throw new ValidationResponseException(ErrorApplicationCodeMessageConstants.APPLICATION_VERSION_NOT_NULL);
-		}
-	}
 }

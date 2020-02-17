@@ -6,6 +6,7 @@ public class ErrorApplicationCodeMessageConstants {
 		
 	}
 	
+	public static final String APPLICATION_ID_NOT_NULL = "applications.applicationIdNotNull";
 	public static final String APPLICATION_NAME_NOT_NULL = "applications.applicationNameNotNull";
 	public static final String APPLICATION_NAME_SIZE = "applications.applicationNameSize";
 	public static final String APPLICATION_DESCRIPTION_NOT_NULL = "applications.applicationDescriptionNotNull";

@@ -52,18 +52,4 @@ public class ApplicationEntity {
 	@Column(name = "documentation_url", nullable = false)
 	private String documentationUrl;
 	
-	@Version
-	@Column(name = "version", nullable = false)
-	private Integer version;
-	
-	@OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true)
-	@Singular
-	private List<ServiceEntity> services;
-	
-	public void addService(ServiceEntity serviceEntity) {
-		if(services == null) {
-			services = new ArrayList<>();
-		}
-		services.add(serviceEntity);
-	}
 }

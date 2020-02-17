@@ -14,6 +14,5 @@ public class ApplicationEntity_ {
 	public static volatile SingularAttribute<ApplicationEntity, String> homeUri;
 	public static volatile SingularAttribute<ApplicationEntity, String> documentationUrl;
 	public static volatile SingularAttribute<ApplicationEntity, Integer> version;
-	public static volatile ListAttribute<ApplicationEntity, ServiceEntity> services;
 	
 }

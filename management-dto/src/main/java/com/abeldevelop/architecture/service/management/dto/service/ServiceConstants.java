@@ -32,6 +32,9 @@ public class ServiceConstants {
     public static final String DOCUMENTATION_URL_FIELD_NOTES = "Documentation URL for the application";
     public static final String DOCUMENTATION_URL_FIELD_EXAMPLE = "http://local.com/doc/architecture/";
     
+    public static final String APPLICATION_VERSION_FIELD_NOTES = "Version of the application";
+    public static final String APPLICATION_VERSION_FIELD_EXAMPLE = "1";
+    
     public static final String PAGINATION_FIELD_NOTES = "Resource with pagination information";
     
     public static final String SERVICES_FIELD_NOTES = "List of services";

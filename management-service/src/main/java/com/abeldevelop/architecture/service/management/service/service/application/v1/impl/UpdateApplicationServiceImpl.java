@@ -29,8 +29,6 @@ public class UpdateApplicationServiceImpl extends CommonService implements Updat
 		ApplicationEntity applicationEntity = applicationRepository.executeFindById(application.getId())
 			.orElseThrow(() -> new BadRequestException(ErrorApplicationCodeMessageConstants.APPLICATION_WITH_ID_NOT_EXIST, Arrays.asList(application.getId())));
 		
-		checkNotExistConflict(applicationEntity.getVersion(), application.getVersion());
-		
 		return applicationMapper.mapEntityToDomain(applicationRepository.executeSave(applicationMapper.mapDomainToEntity(application, applicationEntity)));
 	}
 

@@ -29,7 +29,6 @@ public class UpdateApplicationRequestResourceValidator implements ValidationReso
 		validateEnabled(updateApplicationRequestResource);
 		validateHomeUri(updateApplicationRequestResource);
 		validateDocumentationUrl(updateApplicationRequestResource);
-		validateVersion(updateApplicationRequestResource);
 	}
 
 	private void validateDescription(UpdateApplicationRequestResource updateApplicationRequestResource) {
@@ -65,9 +64,4 @@ public class UpdateApplicationRequestResourceValidator implements ValidationReso
 		}
 	}
 	
-	private void validateVersion(UpdateApplicationRequestResource updateApplicationRequestResource) {
-		if(updateApplicationRequestResource.getVersion() == null) {
-			throw new ValidationRequestException(ErrorApplicationCodeMessageConstants.APPLICATION_VERSION_NOT_NULL);
-		}
-	}
 }
