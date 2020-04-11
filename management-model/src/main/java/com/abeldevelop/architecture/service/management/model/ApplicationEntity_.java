@@ -1,6 +1,5 @@
 package com.abeldevelop.architecture.service.management.model;
 
-import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
